@@ -21,7 +21,7 @@ terraform destroy -auto-approve
 deleted_item="$CHAIN_ID"
 echo "Deleted: $deleted_item" >> ../Deleted.txt
 
-if [ -d "$TARGET_DIR" ]; then
+if [ -d "$DELETE_TARGET" ]; then
     # Navigate to the directory
     rm -r "$DELETE_TARGET" || { echo "Failed to Delete the $DELETE_TARGET"; exit 1; }
     echo "Deleted"
