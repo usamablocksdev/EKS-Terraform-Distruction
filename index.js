@@ -34,9 +34,9 @@ const job = new CronJob(
 
     for (const chain of chains) {
       if (Date.now() - chain.createdAt >= ONE_HOUR) {
-        console.log(`Destroying ${chains.name}`);
+        console.log(`Destroying ${chain.name}`);
         try {
-          exec(`bash ./destroy.sh ${chains.name}`, (error, stdout, stderr) => {
+          exec(`bash ./destroy.sh ${chain.name}`, (error, stdout, stderr) => {
             console.log(stdout);
           });
           await sleep(5000);
